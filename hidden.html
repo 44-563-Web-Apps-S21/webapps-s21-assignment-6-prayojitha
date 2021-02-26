@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hidden page</title>
+    </head>
+ 
+<body>
+
+<h2>Hidden things by Keerthi Prayojitha Bere</h2>
+
+<form>
+    <label for="form1_secret">Enter the secret word</label>
+    <input type ="password" id="form1_secret" name="form1_secret" > <br>
+
+    <label for="form1_guess">Enter a guess</label>
+    <input type ="text" id="form1_guess" name="form1_guess" > <br>
+
+    <input type="button" onclick="processGuess()" value="Check the guess">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+var correct = 0;
+var wrong = 0;
+
+function processGuess(){
+    console.log("Getting form values")
+    secret = document.getElementById("form1_secret").value
+    guess = document.getElementById("form1_guess").value
+     if(secret==guess){
+    
+       alert("Congratulations")
+       document.getElementById("result").innerHTML = correct++;
+     
+     }
+     else{
+    
+        alert("Sorry")
+        document.getElementById("result").innerHTML = wrong++;
+        
+     }
+   
+    
+}
+
+</script>
+
+</body>
+</html> 
