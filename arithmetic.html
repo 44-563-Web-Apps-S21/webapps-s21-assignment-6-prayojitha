@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Arithmetic page
+        </title>
+    </head>
+ 
+<body>
+
+<h2>computes</h2>
+
+<form>
+    <label for="form1_firstvalue">Enter a number</label>
+    <input type ="number" id="form1_firstvalue" name="form1_firstvalue" value=10> <br>
+
+    <label for="form1_secondvalue">Enter a number </label>
+    <input type ="number" id="form1_secondvalue" name="form1_secondvalue" value=2> <br>
+
+    <input type="button" onclick="permutations()" value="compute">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+
+function permutations(){
+    
+    var first = document.getElementById("form1_firstvalue").value
+    var second = document.getElementById("form1_secondvalue").value
+    var product = 1;
+    
+    var diffValue = first-second+1;
+    for(var num = diffValue; num <= first; num++){
+        product = product * num;
+    }
+    console.log('product', product);
+    out = document.getElementById("result")
+    
+}
+</script>
+
+</body>
+</html> 

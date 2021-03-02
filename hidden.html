@@ -20,51 +20,34 @@
 
 
 <p id="result">This text will be replaced </p>
+
 <div>
-    <img src="buttercup.jpg" alt="buttercup" >
-    <input type="image"  id="image" value="" onclick="rotateImage()">
-    <!-- <input type="image" class="img" value="colour1" />
-<input type="image" class="img" value="colour2" />
-<input type="image" class="img" value="colour3" />
-<input type="image" class="img" value="colour4" />
-<input type="image" class="img" value="colour5" />
-<input type="image" class="img" value="colour6" /> -->
 
+  <img src="buttercup.jpg" alt="buttercup" id="output-image" onclick="rotateImage()">
 
+  <!-- <input type="image" id="output-image" value=""> -->
 </div>
 <script>
     var currentImage = 0;
-var images = document.querySelectorAll('.img');
-
-for (var i = images.length; i--;) images[i].addEventListener('click', rotateImage);
+    var correct = 0;
+    var wrong = 0;
 
 function rotateImage() {
   switch (currentImage) {
     case 0:
-      image = '<img src="buttercup"></img>';
-      currentImage+1;
+      document.getElementById("output-image").src = "buttercup.jpg";
+      currentImage++;
       break;
     case 1:
-      image = '<img src="english daisy.jpg"></img>';
-      currentImage+2;
+      document.getElementById("output-image").src = "english daisy.jpg";
+      currentImage++;
       break;
     case 2:
-      image = '<img src="rain lily"></img>';
-      currentImage+3;
+      document.getElementById("output-image").src = "rain lily.jpg"
+      currentImage = 0;
       break;
-
-
   }
-
-  document.getElementById("output-image").innerHTML = image;
 }
-
-
-</script>
-
-<script> 
-var correct = 0;
-var wrong = 0;
 
 function processGuess(){
     console.log("Getting form values")
