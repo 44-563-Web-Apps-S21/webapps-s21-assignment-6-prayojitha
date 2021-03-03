@@ -2,20 +2,29 @@
 <html>
     <head>
         <title>Hidden page</title>
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </head>
  
 <body>
-
+<div>
 <h2>Hidden things by Keerthi Prayojitha Bere</h2>
+</div>
+<br>
 
 <form>
+   <div >
     <label for="form1_secret">Enter the secret word</label>
     <input type ="password" id="form1_secret" name="form1_secret" > <br>
 
     <label for="form1_guess">Enter a guess</label>
     <input type ="text" id="form1_guess" name="form1_guess" > <br>
-
-    <input type="button" onclick="processGuess()" value="Check the guess">
+    
+    <input type="button" class="btn btn-success" onclick="processGuess()" value="Check the guess">
+    </div>
 </form>
 
 
