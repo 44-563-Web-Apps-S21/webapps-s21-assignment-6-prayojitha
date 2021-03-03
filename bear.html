@@ -9,12 +9,9 @@
 <h2>Keerthi Prayojitha builds a bear</h2>
 
 <form>
-    <!-- <input type="checkbox" id="hat" name="topping1" value="hat" > -->
-     
     <input type ="checkbox" id="hat"  value="hat">  
     <label for="form1_hat">hat </label><br>
-
-     
+    
     <input type ="checkbox" id="scarf"  value = "scarf"> 
     <label for="form1_scarf">scarf</label><br>
 
@@ -24,8 +21,19 @@
     <input type="button" onclick="startBear()" value="Start a bear">
 </form>
 
+<form>
+    <label for="property">Enter a property</label>
+    <input type ="text" id="property" name="property" value="colour"> <br>
+
+    <label for="value">Enter a value </label>
+    <input type ="text" id="value" name="value" > <br>
+
+    <input type="button" onclick="updateBear()" value="Update the bear">
+</form>
+
 
 <p id="result">This text will be replaced </p>
+<p id="resultsb">This text will be replaced </p>
 
 <script> 
 var my_bear = { }
@@ -37,6 +45,12 @@ function startBear(){
     out=document.getElementById("result")
     out.innerHTML = "{ " + "hat: " +  my_bear.hat + ", " + "scarf: " +  my_bear.scarf + ", " + "shirt: " +  my_bear.shirt + " }";
     console.log(my_bear)
+}
+function updateBear(){
+    my_bear.property=document.getElementById("property").value
+    my_bear.value=document.getElementById("value").value
+    var outpt=document.getElementById("resultsb")
+    outpt.innerHTML = "{ "+ "property: " + my_bear.property + ", " + "value: " + my_bear.value +" }"
 }
 </script>
 
