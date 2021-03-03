@@ -18,28 +18,59 @@
     <input type ="number" id="form1_secondvalue" name="form1_secondvalue" value=2> <br>
 
     <input type="button" onclick="permutations()" value="compute">
+<form>
+    <br>
+<form>
+        <input type="radio" name="markedRadio" id="plus" value="plus" onclick="processRadio()" >
+        <label for="plus">+</label></br>
+
+        <input type="radio" name="markedRadio" id="minus" value="minus" onclick="processRadio()" >
+        <label for="minus">-</label></br>
+
+        <input type="radio" name="markedRadio" id="times" value="times" onclick="processRadio()" >
+        <label for="times">*</label></br>
+
+        <input type="radio" name="markedRadio" id="divide" value="divide" onclick="processRadio()" >
+        <label for="divide">/</label></br>
 </form>
 
+<p id="radioresult">This text will be replaced </p>
+<p id="result"></p>
 
-<p id="result">This text will be replaced </p>
-
-<script> 
+<script>
 
 function permutations(){
-    
-    var first = document.getElementById("form1_firstvalue").value
-    var second = document.getElementById("form1_secondvalue").value
+    var first = document.getElementById("form1_firstvalue").value;
+    var second = document.getElementById("form1_secondvalue").value;
     var product = 1;
-    
     var diffValue = first-second+1;
     for(var num = diffValue; num <= first; num++){
         product = product * num;
     }
-    console.log('product', product);
     out = document.getElementById("result")
     out.innerHTML = first + " permute " +second +" is "+ product
-    
 }
+function processRadio(){
+    var firstInt = parseInt(document.getElementById("form1_firstvalue").value);
+    var secondInt = parseInt(document.getElementById("form1_secondvalue").value);
+    var resultop;
+    if(document.getElementById('plus').checked) 
+        resultop = firstInt + secondInt
+    else if(document.getElementById('minus').checked) {
+        resultop = firstInt - secondInt
+    }
+    else if(document.getElementById('times').checked) {
+        resultop = firstInt * secondInt
+    }
+    else if(document.getElementById('divide').checked) {
+        resultop = firstInt / secondInt
+    }
+    var arthresult = document.getElementById("radioresult")
+    arthresult.innerHTML = resultop
+}
+
+
+
 </script>
 
 </body>
