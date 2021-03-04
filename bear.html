@@ -44,24 +44,33 @@
 
 
 <p id="result">This text will be replaced </p>
-<p id="resultsb">This text will be replaced </p>
+<!-- <p id="resultsb">This text will be replaced </p> -->
 
 <script> 
-var my_bear = { }
+var my_bear = { };
+var result_bear = '';
+var update_bear = '';
 
 function startBear(){
     my_bear.hat=document.getElementById("hat").checked
     my_bear.scarf=document.getElementById("scarf").checked
     my_bear.shirt=document.getElementById("shirt").checked
     out=document.getElementById("result")
-    out.innerHTML = "{ " + "hat: " +  my_bear.hat + ", " + "scarf: " +  my_bear.scarf + ", " + "shirt: " +  my_bear.shirt + " }";
-    console.log(my_bear)
+    
+    for(var property in my_bear){
+        result_bear += `${property}: ${my_bear[property]}` + " ";
+    }
+    out.innerHTML = result_bear;
 }
 function updateBear(){
-    my_bear.property=document.getElementById("property").value
-    my_bear.value=document.getElementById("value").value
-    var outpt=document.getElementById("resultsb")
-    outpt.innerHTML = "{ "+ "property: " + my_bear.property + ", " + "value: " + my_bear.value +" }"
+    var property=document.getElementById("property").value
+    var value=document.getElementById("value").value
+    my_bear[property] = value;
+    var outpt=document.getElementById("result")
+    for(var property in my_bear){
+        update_bear += `${property}: ${my_bear[property]}` + " ";
+    }
+    outpt.innerHTML = update_bear;
 }
 </script>
 </div>
