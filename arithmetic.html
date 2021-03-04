@@ -11,15 +11,16 @@
  
 <body>
 
-<h2>computes</h2>
 
+<div class="container">
+    <h2>computes</h2>
 <form>
-    <div>
+    <div class="form-group">
     <label for="form1_firstvalue">Enter a number</label>
-    <input type ="number" id="form1_firstvalue" name="form1_firstvalue" value=10> <br>
+    <input type ="number" id="form1_firstvalue" class="form-control" name="form1_firstvalue" value=10> <br>
 
     <label for="form1_secondvalue">Enter a number </label>
-    <input type ="number" id="form1_secondvalue" name="form1_secondvalue" value=2> <br>
+    <input type ="number" id="form1_secondvalue" class="form-control"name="form1_secondvalue" value=2> <br>
 
     <input type="button" class="btn btn-info" onclick="permutations()" value="compute">
     </div>
@@ -79,6 +80,7 @@ function processRadio(){
 
 
 </script>
+</div>
 
 </body>
 </html> 
