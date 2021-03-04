@@ -2,10 +2,16 @@
 <html>
     <head>
         <title>Bear page</title>
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </head>
  
 <body>
-
+<div class="container">
 <h2>Keerthi Prayojitha builds a bear</h2>
 
 <form>
@@ -22,13 +28,18 @@
 </form>
 
 <form>
-    <label for="property">Enter a property</label>
-    <input type ="text" id="property" name="property" value="colour"> <br>
+    <div class="row">
+        <div class="col">
+                <label for="property">Enter a property</label>
+                <input type ="text" id="property" class="form-control" name="property" value="colour"> <br>
+        </div>
+        <div class="col">
+                <label for="value">Enter a value </label>
+                <input type ="text" id="value" class="form-control" name="value" > <br>
+        </div>
 
-    <label for="value">Enter a value </label>
-    <input type ="text" id="value" name="value" > <br>
-
-    <input type="button" onclick="updateBear()" value="Update the bear">
+    <input type="button" onclick="updateBear()" class="btn btn-outline-warning" value="Update the bear">
+    </div>
 </form>
 
 
@@ -53,6 +64,6 @@ function updateBear(){
     outpt.innerHTML = "{ "+ "property: " + my_bear.property + ", " + "value: " + my_bear.value +" }"
 }
 </script>
-
+</div>
 </body>
 </html> 
