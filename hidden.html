@@ -28,13 +28,10 @@
 </form>
 
 
-<p id="result">This text will be replaced </p>
+<p id="result"><mark>This text will be replaced</mark> </p>
 
 <div>
-
-  <img src="buttercup.jpg" alt="buttercup" id="output-image" onclick="rotateImage()">
-
-  <!-- <input type="image" id="output-image" value=""> -->
+    <img src="buttercup.jpg" alt="buttercup" id="output-image" onclick="rotateImage()">
 </div>
 <script>
     var currentImage = 0;
@@ -65,21 +62,16 @@ function processGuess(){
      if(secret==guess){
     
        alert("Congratulations")
-       document.getElementById("result").innerHTML = correct++;
+       document.getElementById("result").innerHTML= correct++;
      
      }
      else{
-    
         alert("Sorry")
         document.getElementById("result").innerHTML = wrong++;
         
      }
-   
-    
-
 }
 
 </script>
-
 </body>
 </html> 
